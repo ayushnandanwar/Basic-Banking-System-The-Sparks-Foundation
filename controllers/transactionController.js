@@ -32,6 +32,7 @@ exports.addMoney = async (req,res)=>{
         //     success:false,
         //     message:err.message
         // })
+        let customer = await Customer.findOne({_id:req.params.id})
         res.redirect(url.format({
             pathname:'/customers/'+customer._id,
             query:{
