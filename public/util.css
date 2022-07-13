@@ -27,10 +27,16 @@
     color: black;
     border: 3px solid rgba(165, 42, 42, 0.691);
     border-radius: 129px;
-    font-size: 2.4rem;
+    font-size: 2.0rem;
     padding: 10px 45px;
-    
+    animation: get 1s ease-in-out  1;
 }
+@media screen and (max-width: 810px) {
+    .btn-start{
+        padding: 10px 25px;
+        font-size: 1.5rem;
+    } 
+    }
 
 .btn-add{
     background-color: rgb(30, 255, 0);
@@ -41,4 +47,12 @@
     background-color: rgb(255, 0, 0);
     color: rgb(255, 255, 255);
     border: 1px solid rgb(225, 123, 123);
+}
+
+@keyframes get {
+    from{
+        margin-left: -400px;
+    }to{
+        margin-left: 0;
+    }
 }
