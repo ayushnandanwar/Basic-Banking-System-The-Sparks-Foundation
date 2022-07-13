@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
  app.use(express.static('public'))
  const indexRouter = require('./routes/index');
 
-app.get('/',(req,res)=>{
+app.get('/',(req,res)=>{ 
     res.sendFile('./public/index.html')
 })
 

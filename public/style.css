@@ -71,7 +71,7 @@ footer a{
 header{
     background-color: rgb(56, 56, 242);
     color: white;
-    font-size: 2.6rem;
+    font-size: 2.4rem;
     padding: 20px 4vw;
     letter-spacing: 2px;
     text-align: center;
@@ -84,10 +84,11 @@ header nav{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.23rem;
+    font-size: 1.1rem;
 }
 header > div{
     padding:5px 0;
+    text-align: center;
 }
 .at{
     color: aqua;
@@ -131,7 +132,15 @@ header span{
         border-radius: 5px;
         padding: 0;
     }
+    header nav{
+        
+        font-size: 1rem;
+    
   }
+  header{
+    font-size: 2rem;
+}
+}
 .table-scroll{
     overflow: auto;
 }
