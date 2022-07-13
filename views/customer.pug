@@ -52,7 +52,7 @@ html(lang="en")
             div.transfer-div 
                 h2 Tranfer Money 
                 form(action=`/transfer/${customer._id}` method='POST')
-                    select(name='to')
+                    select(name='to' required)
                         option(value="") ---Select Customer--
                         each cust in customers 
                             option(value=`${cust._id}`)= `${cust.name} (${cust.account_no})`
