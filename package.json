@@ -1,0 +1,21 @@
+{
+  "name": "basic-banking-system",
+  "version": "1.0.0",
+  "description": "Spark Foundation taks #1",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon server"
+  },
+  "author": "Ayush Nandanwar",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "generate-unique-id": "^2.0.1",
+    "mongoose": "^6.4.1",
+    "nodemon": "^2.0.18",
+    "pug": "^3.0.2",
+    "uuid": "^8.3.2"
+  }
+}

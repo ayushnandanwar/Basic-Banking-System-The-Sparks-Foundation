@@ -1,0 +1,67 @@
+doctype html
+html(lang="en") 
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Transactions | Basic Banking System | Spark Foundation
+        style 
+            include ../public/style.css
+            include ../public/util.css
+    body 
+        header 
+            nav
+                a(href='/') Home
+                a(href='/customers').at Customers
+                a(href='/transactions') Transactions
+            div= "Basic Banking System "
+                span The Spark Foundation 
+        if message != undefined && success == "true"
+            div.msg#m= message
+                span.hide(onclick="document.getElementById('m').classList.add('none')") x
+        else if success == "false"
+            div.msg-err#m= message 
+                span.hide.white(onclick="document.getElementById('m').classList.add('none')") x
+        section.cust-head 
+            span= "Account No.: "+customer.account_no
+            span= "Balance : Rs." + customer.current_balance + "/-"
+        section.cust-div
+            div.cust-details 
+                h2 Customer Details
+                div.cust-table 
+                    div.fields 
+                        div Account No 
+                        div Name
+                        div Email 
+                        div Current Balance 
+                    div 
+                        div :
+                        div :
+                        div :
+                        div :
+                    div.values 
+                        div= customer.account_no 
+                        div= customer.name 
+                        div= customer.email 
+                        div= "Rs. " + customer.current_balance + "/-"
+            div.add-money
+                h2 Add Money 
+                form(action=`/add/${customer._id}` method='POST')
+                    input(type="number" name='amount' placeholder="Enter amount to add" required)
+                    input(type="submit" value="Add Money").btn.btn-add 
+            div.transfer-div 
+                h2 Tranfer Money 
+                form(action=`/transfer/${customer._id}` method='POST')
+                    select(name='to')
+                        option(value="") ---Select Customer--
+                        each cust in customers 
+                            option(value=`${cust._id}`)= `${cust.name} (${cust.account_no})`
+                    input(type="number" name='amount' required placeholder="Enter amount to transfer")
+                    input(type="submit" value="Tranfer Money").btn.btn-tranfer
+
+        footer
+            | Copyright &copy; The Spark Foundation 2022 Developed by
+            a(href='https://www.linkedin.com/in/ayush-nandanwar-630214210/' target='_blank') Ayush Nandanwar
+
+
+            
